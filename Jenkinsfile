@@ -1,10 +1,6 @@
 pipeline {
-    agent {
-    tools {
-        // Note: this should match with the tool name configured in your jenkins instance (JENKINS_URL/configureTools/)
-        maven "MVN_HOME"
-        
-    }
+    agent any
+	
 	 environment {
         // This can be nexus3 or nexus2
         NEXUS_VERSION = "nexus3"
@@ -22,7 +18,7 @@ pipeline {
             steps {
                 script {
                     // Let's clone the source
-                    git 'https://github.com/OP-CODER/simplecutomerapp.git';
+                    git 'https://github.com/dakkani/sabear_simplecutomerapp.git';
                 }
             }
         }
@@ -78,5 +74,4 @@ pipeline {
             }
         }
     }
-}
 }
